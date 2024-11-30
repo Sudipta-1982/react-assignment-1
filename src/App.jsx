@@ -1,20 +1,21 @@
-import book1 from "./assets/book1.png";
-import book2 from "./assets/book2.png";
-import book3 from "./assets/book3.png";
-import book4 from "./assets/book4.png";
-import book5 from "./assets/book5.png";
-import { Book } from "./components/Book";
 import "./App.css";
+import Header from "./components/Header/Header";
+import Gallery from "./pages/Gallery/Gallery";
+import Footer from "./components/Footer/Footer";
+import { Route, Routes } from "react-router-dom";
+import Counter from "./pages/Counter/Counter";
 
 function App() {
   return (
-    <div className="container">
-      <Book logo={book1} title="Great travel at desert" author="Howdy" />
-      <Book logo={book2} title="Great travel at desert" author="Howdy" />
-      <Book logo={book3} title="Great travel at desert" author="Howdy" />
-      <Book logo={book4} title="Great travel at desert" author="Howdy" />
-      <Book logo={book5} title="Great travel at desert" author="Howdy" />
-    </div>
+    <>
+      <Header></Header>
+      <Routes>
+        <Route exact path="/" element={<Gallery />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/counter" element={<Counter />} />
+      </Routes>
+      <Footer></Footer>
+    </>
   );
 }
 
