@@ -10,7 +10,7 @@ export function Book(props) {
         <span>Author:</span>
         {props.author}
       </div>
-      <div classname="book-price">
+      <div className="book-price">
         <span>Price: </span> {props.bookPrice}$
       </div>
     </div>
